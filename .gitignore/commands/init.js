@@ -17,11 +17,11 @@ module.exports = {
             if(!role_finder_off){
                 message.guild.roles.create({data: {name: "TempChannels - off", color: "#007F00"}});
             }
-            message.reply("The bot was initialized.");
+            message.reply("The Bot was initialized.");
             console.log(`Bot: Bot initialized on ${server}'s server.`);
         }
         else{
-            message.reply("The bot was already initialized.");
+            message.reply("The Bot was already initialized.");
             return;
         }
     }

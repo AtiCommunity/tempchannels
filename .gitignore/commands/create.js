@@ -11,7 +11,7 @@ module.exports = {
 
 
         if(!role_finder){
-            message.reply("The bot was not initialized. Please write tc/init to init it.");
+            message.reply("The Bot was not initialized. Please write tc/init to initiate it.");
             return;
         }
 
@@ -26,7 +26,7 @@ module.exports = {
                 
                 message.member.roles.add(role_finder_on.id);
                 message.member.roles.remove(role_finder_off.id);
-                console.log(`Bot: ${channel_name}'s channel was created on ${server}'s server.`);
+                console.log(`Bot: The ${channel_name}'s channel was created on ${server}'s server.`);
             }
         }
     }

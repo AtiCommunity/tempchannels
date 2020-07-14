@@ -11,22 +11,22 @@ module.exports = {
 
 
         if(!role_finder){
-            message.reply("The bot was not initialized. Please write tc/init to init it.");
+            message.reply("The Bot was not initialized. Please write tc/init to initiate it.");
             return;
         }
 
         else{
             if(message.member.roles.cache.find(role => role.name === "TempChannels - off")){
-                message.reply("You don't have created a channel.");
+                message.reply("You have not created a channel.");
             }
 
             else{
                 message.guild.channels.cache.find(channel => channel.name === `${channel_name}`).delete();
-                message.reply("Your channels was deleted.");
+                message.reply("Your channels were deleted.");
 
                 message.member.roles.add(role_finder_off.id);
                 message.member.roles.remove(role_finder_on.id);
-                console.log(`Bot: ${channel_name}'s channel was deleted on ${server}'s server.`);
+                console.log(`Bot: The ${channel_name}'s channel was deleted on ${server}'s server.`);
             }
         }
     }
