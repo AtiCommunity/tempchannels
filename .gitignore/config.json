@@ -1,0 +1,5 @@
+{
+    "prefix": "tc/",
+    "token": "process.env.TOKEN",
+    "version": "1.0"
+}
