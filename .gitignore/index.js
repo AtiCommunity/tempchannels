@@ -27,7 +27,7 @@ client.on("guildMemberAdd", member => {
 
 
     member.roles.add(autorole);
-    console.log(`Bot: New role asigned to ${member.user.username}.`)
+    console.log(`Bot: New role assigned to ${member.user.username}.`)
 });
 
 
@@ -49,8 +49,8 @@ client.on("message", message => {
 
     catch(error){
         console.error(error);
-        message.channel.send("Error : The Command was not executed successfuly.");
+        message.channel.send("Error : The command was not executed successfully.");
     }
 });
 
-client.login(process.env.TOKEN);
+client.login(token);
