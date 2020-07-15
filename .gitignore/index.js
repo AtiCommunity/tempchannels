@@ -17,8 +17,22 @@ for(const file of commandFiles){
 
 
 client.on("ready", () => {
-    client.user.setActivity("tc/create", {type: "WATCHING"});
-    console.log("Bot: Online !");
+    const status = [
+        `${client.guilds.cache.size} servers | tc/create`,
+        `${client.channels.cache.size} channels | tc/create`,
+        `${client.users.cache.size} users | tc/create`,
+    ];
+    var x = 0;
+
+
+    setInterval(() => {
+        client.user.setActivity(status[x], {type: "WATCHING"});
+        x = x+1;
+        if(x == 3){
+            x = 0;
+        }
+    }, 30000)
+    console.log(`Bot: Online on ${client.guilds.cache.size} servers`);
 });
 
 
@@ -53,4 +67,4 @@ client.on("message", message => {
     }
 });
 
-client.login(process.env.TOKEN);
+client.login(prcess.env.TOKEN);
