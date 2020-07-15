@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const {role_finder, role_finder_on, role_finder_off, server} = require("../config.json");
+
 
 module.exports = {
     name: "init",

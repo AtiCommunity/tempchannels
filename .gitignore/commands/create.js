@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 
+
 module.exports = {
     name: "create",
     execute(message, args){
@@ -9,7 +10,7 @@ module.exports = {
         var role_finder = role_finder_on && role_finder_off;
         var server = message.guild.name;
 
-
+        
         if(!role_finder){
             message.reply("The Bot was not initialized. Please write tc/init to initiate it.");
             return;
