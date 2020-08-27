@@ -13,6 +13,6 @@ module.exports = {
             .addField("Support", "If you have something to ask or feedback, go on the support server of the bot [here](https://discord.gg/F3GDHhM).")
             .setFooter(`version : ${version}`)
             .setTimestamp();
-        message.channel.send(exports.embed)
+        message.channel.send(embed)
     }
 }
