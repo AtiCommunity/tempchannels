@@ -31,7 +31,7 @@ client.on("ready", () => {
             x = 0;
         }
     }, 30000);
-    console.log(client.guilds.cache.map(r => `$name : ${r.name} | members : ${r.memberCount}`));
+    console.log(client.guilds.cache.map(r => `name : ${r.name} | members : ${r.memberCount}`));
     console.log(`INFO: Online on ${client.guilds.cache.size} servers`);
 })
 
