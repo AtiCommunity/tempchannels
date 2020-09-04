@@ -5,7 +5,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const fs = require("fs");
-const {autochannel_name, prefix} = require("./config.json");
+const {autochannel_name, bottest_token, prefix} = require("./config.json");
 
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync("./commands").filter(file => file.endsWith(".js"));
@@ -19,7 +19,7 @@ client.on("ready", () => {
     const status = [
         `${client.guilds.cache.size} servers | tc/help`,
         `${client.channels.cache.size} channels | tc/help`,
-        `${client.users.cache.size} users | tc/help`,
+        `${client.users.cache.size} users | tc/help`
     ];
     var x = 0;
 
@@ -71,10 +71,12 @@ client.on("voiceStateUpdate", (oldState, newState) => {
     var old_voicechannel_name = oldState.channel && oldState.channel.name;
     var server = newState.guild.name;
 
-
     if(new_voicechannel_name == autochannel_name){
         newState.guild.channels.create(joined_username, {type: "voice"});
         console.log(`INFO: ${joined_username} created a channel on ${server}.`);
+    }
+    if(oldState.channelID == newState.channelID){
+        return;
     }
     if(old_voicechannel_name == oldState.member.user.username){
         client.channels.cache.find(channel => channel.name === oldState.member.user.username).delete();
