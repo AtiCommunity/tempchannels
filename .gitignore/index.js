@@ -5,7 +5,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const fs = require("fs");
-const {autochannel_name, bottest_token, prefix} = require("./config.json");
+const {autochannel_name, prefix} = require("./config.json");
 
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync("./commands").filter(file => file.endsWith(".js"));
