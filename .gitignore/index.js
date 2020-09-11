@@ -5,7 +5,8 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const fs = require("fs");
-const {autochannel_name, prefix} = require("./config.json");
+const {autochannel_name, autochannel_category, prefix} = require("./config.json");
+
 
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync("./commands").filter(file => file.endsWith(".js"));
@@ -72,7 +73,12 @@ client.on("voiceStateUpdate", (oldState, newState) => {
     var server = newState.guild.name;
 
     if(new_voicechannel_name == autochannel_name){
-        newState.guild.channels.create(joined_username, {type: "voice"});
+        newState.guild.channels.create(joined_username, {
+
+            type: "voice",
+            parent: newState.guild.channels.cache.find(channel => channel.name === autochannel_category && channel.type == "category")
+
+        });
         console.log(`INFO: ${joined_username} created a channel on ${server}.`);
     }
     if(oldState.channelID == newState.channelID){
@@ -87,6 +93,9 @@ client.on("voiceStateUpdate", (oldState, newState) => {
 client.on("channelCreate", channel => {
     var created_channel = channel.id;
 
+    if(typeof new_voicechannel_name === "undefined" || new_voicechannel_name === null){
+        return;
+    }
 
     if(new_voicechannel_name == autochannel_name){
         joined_user.voice.setChannel(created_channel);
