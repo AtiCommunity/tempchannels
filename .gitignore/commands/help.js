@@ -9,7 +9,7 @@ module.exports = {
             .setThumbnail("https://i.imgur.com/mWhU0Lh.png")
             .setTitle("TempChannels")
             .setDescription("Create your own temporary channels.")
-            .addField("How to use", `To use it correcly, you just need to create a category with this name \"${autochannel_category}\" then, create \"${autochannel_name}\" channel and join it and... it's done :wink:`)
+            .addField("How to use", `To use it correcly, you just need to enter the command \"tc/help"\ and join the ${autochannel_name} channel and it's done :wink:`)
             .addField("Support", "If you have something to ask or feedback, go on the support server of the bot [here](https://discord.gg/F3GDHhM).")
             .setFooter(`created by : ${creators} | version : ${version}`)
             .setTimestamp();
