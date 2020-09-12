@@ -5,7 +5,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const fs = require("fs");
-const {autochannel_name, autochannel_category, prefix} = require("./config.json");
+const {autochannel_ncchannel, autochannel_category, prefix} = require("./config.json");
 
 
 client.commands = new Discord.Collection();
@@ -72,7 +72,7 @@ client.on("voiceStateUpdate", (oldState, newState) => {
     var old_voicechannel_name = oldState.channel && oldState.channel.name;
     var server = newState.guild.name;
 
-    if(new_voicechannel_name == autochannel_name){
+    if(new_voicechannel_name == autochannel_ncchannel){
         newState.guild.channels.create(joined_username, {
 
             type: "voice",
@@ -97,7 +97,7 @@ client.on("channelCreate", channel => {
         return;
     }
 
-    if(new_voicechannel_name == autochannel_name){
+    if(new_voicechannel_name == autochannel_ncchannel){
         joined_user.voice.setChannel(created_channel);
     }
 })
