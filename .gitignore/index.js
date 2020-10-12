@@ -72,6 +72,21 @@ client.on("voiceStateUpdate", (oldState, newState) => {
     var old_voicechannel_name = oldState.channel && oldState.channel.name;
     var server = newState.guild.name;
 
+    if(!new_voicechannel_name && old_voicechannel_name){
+        var oldsize = oldState.channel.members.size;
+        if(oldsize > 0 && oldState.guild.channels.cache.find(channel => channel.name === oldState.member.user.username)){
+            var fetchedUser = oldState.channel.members.first().user.username;
+            var fetchedChannel = oldState.guild.channels.cache.find(channel => channel.name === oldState.member.user.username);
+            fetchedChannel.setName(`${fetchedUser}`);
+            console.log(`INFO: ${joined_username}'s channel has changed to ${fetchedUser} on ${server}.`);
+        }
+        else if(oldState.guild.channels.cache.find(channel => channel.name === oldState.member.user.username))
+        {
+            var fetchedChannel = oldState.guild.channels.cache.find(channel => channel.name === oldState.member.user.username);
+            fetchedChannel.delete();
+            console.log(`INFO: ${joined_username}'s channel has been deleted on ${server}.`);
+        }
+    }
     if(new_voicechannel_name == autochannel_ncchannel){
         newState.guild.channels.create(joined_username, {
 
@@ -83,10 +98,6 @@ client.on("voiceStateUpdate", (oldState, newState) => {
     }
     if(oldState.channelID == newState.channelID){
         return;
-    }
-    if(old_voicechannel_name == oldState.member.user.username){
-        client.channels.cache.find(channel => channel.name === oldState.member.user.username).delete();
-        console.log(`INFO: ${joined_username} deleted a channel on ${server}.`);
     }
 })
 
