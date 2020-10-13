@@ -72,6 +72,15 @@ client.on("voiceStateUpdate", (oldState, newState) => {
     var old_voicechannel_name = oldState.channel && oldState.channel.name;
     var server = newState.guild.name;
 
+    if(new_voicechannel_name == autochannel_ncchannel && !newState.guild.channels.cache.find(channel => channel.name === oldState.member.user.username)){
+        newState.guild.channels.create(joined_username, {
+
+            type: "voice",
+            parent: newState.guild.channels.cache.find(channel => channel.name === autochannel_category && channel.type == "category")
+
+        });
+        console.log(`INFO: ${joined_username} created a channel on ${server}.`);
+    }
     if(!new_voicechannel_name && old_voicechannel_name){
         var oldsize = oldState.channel.members.size;
         if(oldsize > 0 && oldState.guild.channels.cache.find(channel => channel.name === oldState.member.user.username)){
@@ -86,18 +95,6 @@ client.on("voiceStateUpdate", (oldState, newState) => {
             fetchedChannel.delete();
             console.log(`INFO: ${joined_username}'s channel has been deleted on ${server}.`);
         }
-    }
-    if(new_voicechannel_name == autochannel_ncchannel){
-        newState.guild.channels.create(joined_username, {
-
-            type: "voice",
-            parent: newState.guild.channels.cache.find(channel => channel.name === autochannel_category && channel.type == "category")
-
-        });
-        console.log(`INFO: ${joined_username} created a channel on ${server}.`);
-    }
-    if(oldState.channelID == newState.channelID){
-        return;
     }
 })
 
