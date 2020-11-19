@@ -83,7 +83,7 @@ client.on("voiceStateUpdate", (oldState, newState) => {
     }
     if(!new_voicechannel_name && old_voicechannel_name){
         var oldsize = oldState.channel.members.size;
-        if(oldsize > 0 && oldState.guild.channels.cache.find(channel => channel.name === oldState.member.user.username)){
+        if(oldsize > 0 && oldState.guild.channels.cache.find(channel => channel.name === oldState.member.user.username) || old_voicechannel_name != new_voicechannel_name){
             var fetchedUser = oldState.channel.members.first().user.username;
             var fetchedChannel = oldState.guild.channels.cache.find(channel => channel.name === oldState.member.user.username);
             fetchedChannel.setName(`${fetchedUser}`);
