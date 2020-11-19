@@ -71,8 +71,6 @@ client.on("voiceStateUpdate", (oldState, newState) => {
     var joined_username = newState.member.user.username;
     var old_voicechannel_name = oldState.channel && oldState.channel.name;
     var server = newState.guild.name;
-    console.log(oldState);
-    console.log(newState);
 
     if(new_voicechannel_name == autochannel_ncchannel && !newState.guild.channels.cache.find(channel => channel.name === oldState.member.user.username)){
         newState.guild.channels.create(joined_username, {
@@ -85,7 +83,7 @@ client.on("voiceStateUpdate", (oldState, newState) => {
     }
     if(!new_voicechannel_name && old_voicechannel_name){
         var oldsize = oldState.channel.members.size;
-        if(oldsize > 0 && oldState.guild.channels.cache.find(channel => channel.name === oldState.member.user.username) || old_voicechannel_name != new_voicechannel_name){
+        if(oldsize > 0 && oldState.guild.channels.cache.find(channel => channel.name === oldState.member.user.username)){
             var fetchedUser = oldState.channel.members.first().user.username;
             var fetchedChannel = oldState.guild.channels.cache.find(channel => channel.name === oldState.member.user.username);
             fetchedChannel.setName(`${fetchedUser}`);
