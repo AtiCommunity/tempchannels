@@ -71,6 +71,8 @@ client.on("voiceStateUpdate", (oldState, newState) => {
     var joined_username = newState.member.user.username;
     var old_voicechannel_name = oldState.channel && oldState.channel.name;
     var server = newState.guild.name;
+    console.log(oldState);
+    console.log(newState);
 
     if(new_voicechannel_name == autochannel_ncchannel && !newState.guild.channels.cache.find(channel => channel.name === oldState.member.user.username)){
         newState.guild.channels.create(joined_username, {
