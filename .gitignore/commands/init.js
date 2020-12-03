@@ -35,7 +35,7 @@ module.exports = {
             message.channel.send("This server was initialised succesfully.")
         }
         else{
-            message.reply("This server was already initialised.");
+            message.reply("This server was already initialised. *(If you have any problems, delete all channels + category and try it again.)*");
         }
     }
 }
