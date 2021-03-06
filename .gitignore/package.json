@@ -1,15 +1,14 @@
 {
-  "name": "tempchannels",
-  "version": "1.4.0",
-  "main": "index.js",
-  "dependencies": {
-    "discord.js": "^12.3.1"
-  },
-  "devDependencies": {},
+  "name": "tempchannels-21.03.06",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Atineon",
   "license": "ISC",
-  "description": ""
+  "dependencies": {
+    "discord.js": "^12.5.1"
+  }
 }

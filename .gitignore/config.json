@@ -1,8 +1,8 @@
 {
-    "autochannel_buggedchannel": "The bot is bugged ?",
-    "autochannel_category": "TempChannels",
-    "autochannel_ncchannel": "➕ New Channel",
-    "creators": "Atineon#2652 and Zenyth#4037",
-    "prefix": "tc/",
-    "version": "1.5.201203"
+    "AVC_CATEGORY": "TempChannels",
+    "AVC_CHANNELCOUNTER": "ChannelCounter : ",
+    "AVC_NC": "➕ New Channel",
+    "CREATOR": "Atineon#2652",
+    "PREFIX": "tc/",
+    "VERSION": "21.03.06"
 }
