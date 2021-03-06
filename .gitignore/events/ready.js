@@ -8,12 +8,12 @@ module.exports = (client) => {
 
 
     setInterval(() => {
-        client.user.setActivity(status[x], {type: "WATCHING"});
-        x = x+1;
         if(x == 3){
             x = 0;
         }
-    }, 30000);
+        client.user.setActivity(status[x], {type: "WATCHING"});
+        x++;
+    }, 15000);
     console.log(client.guilds.cache.map(r => `name : ${r.name} | members : ${r.memberCount}`));
     console.log(`INFO: Online on ${client.guilds.cache.size} servers`);
     console.log(`Logged in as ${client.user.tag}!`);
