@@ -20,7 +20,8 @@ client.on("ready", () => {
     const status = [
         `${client.guilds.cache.size} servers | tc/help`,
         `${client.channels.cache.size} channels | tc/help`,
-        `${client.users.cache.size} users | tc/help`
+        `${client.users.cache.size} users | tc/help`,
+        "New update soon..."
     ];
     var x = 0;
 
@@ -28,7 +29,7 @@ client.on("ready", () => {
     setInterval(() => {
         client.user.setActivity(status[x], {type: "WATCHING"});
         x = x+1;
-        if(x == 3){
+        if(x == 4){
             x = 0;
         }
     }, 30000);
