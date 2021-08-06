@@ -1,6 +1,7 @@
 {
     "AVC_CATEGORY": "TempChannels",
     "AVC_NC": "➕ New Channel",
+    "COMMANDS" : ["help", "init"],
     "CREATOR": "Atineon#2652",
     "PREFIX": "tc/",
     "VERSION": "21.03.06"
