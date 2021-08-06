@@ -13,8 +13,8 @@ module.exports = (client) => {
         }
         client.user.setActivity(status[x], {type: "WATCHING"});
         x++;
-    }, 15000);
-    console.log(client.guilds.cache.map(r => `name : ${r.name} | members : ${r.memberCount}`));
-    console.log(`INFO: Online on ${client.guilds.cache.size} servers`);
-    console.log(`Logged in as ${client.user.tag}!`);
+    }, 10000);
+    console.log(client.guilds.cache.map(guild => `name : ${guild.name} | members : ${guild.memberCount}`));
+    console.log(`INFO: Online on ${client.guilds.cache.size} servers.`);
+    console.log(`Logged in as ${client.user.tag} !`);
 };

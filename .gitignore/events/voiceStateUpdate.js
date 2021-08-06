@@ -6,8 +6,8 @@ module.exports = (client, oldState, newState) => {
     var joining_user = newState.member.user.username;
     var new_vc_name = newState.channel && newState.channel.name;
     var old_vc_name = oldState.channel && oldState.channel.name;
-    var created_channel;
-
+ 
+    
     if(new_vc_name == AVC_NC){
         setTimeout(() => {
             newState.guild.channels.create(joining_user, {
@@ -15,11 +15,11 @@ module.exports = (client, oldState, newState) => {
                 parent: newState.guild.channels.cache.find(channel => channel.name === AVC_CATEGORY && channel.type == "category")
             });
             setTimeout(() => {
-                created_channel = newState.guild.channels.cache.find(channel => channel.name === joining_user && channel.type == "voice");
+                var created_channel = newState.guild.channels.cache.find(channel => channel.name === joining_user && channel.type == "voice");
                 joined_user.voice.setChannel(created_channel);
             }, 500);
-            console.log(`INFO: ${joining_user} created a channel on ${server}.`);
             
+            console.log(`INFO: ${joining_user} created a channel on ${server}.`);
         }, 500);
     }
 

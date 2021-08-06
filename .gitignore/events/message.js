@@ -3,8 +3,6 @@ const { PREFIX } = require("../config.json");
 module.exports = (client, message) => {
     const args = message.content.slice(PREFIX.length).split(/ +/);
     const command = args.shift().toLowerCase();
-    console.log(args);
-    console.log(command);
 
     if(!message.content.startsWith(PREFIX) || message.author.bot) return;
 
@@ -13,7 +11,9 @@ module.exports = (client, message) => {
     }
 
     catch(error){
-        message.reply("The command was not executed successfully.");
+        message.reply("The command was not executed successfully or the command is unknown.");
         console.error(error);
     }
+    
+    console.log(`INFO: ${message.author.tag} used the command ${command}.`);
 };
