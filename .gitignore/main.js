@@ -16,4 +16,4 @@ client.on("ready", () => require("./events/ready")(client));
 client.on("message", message => require("./events/message")(client, message));
 client.on("voiceStateUpdate", (oldState, newState) => require("./events/voiceStateUpdate")(client, oldState, newState));
 
-client.login("NzQ4NjIxNTk0MDc0NTQ2MzY3.X0gGMA.z-V6dGSTi81AsZO5c-sFuTOTxH0");
+client.login(proc.env.TOKEN);
