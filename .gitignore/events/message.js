@@ -6,6 +6,8 @@ module.exports = (client, message) => {
 
     if(!message.content.startsWith(PREFIX) || message.author.bot) return;
 
+    console.log(`INFO: ${message.author.tag} used the command ${command}.`);
+
     try{
         client.commands.get(command).execute(message, args);
     }
@@ -14,6 +16,4 @@ module.exports = (client, message) => {
         message.reply("The command was not executed successfully or the command is unknown.");
         console.error(error);
     }
-    
-    console.log(`INFO: ${message.author.tag} used the command ${command}.`);
 };
