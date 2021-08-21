@@ -1,6 +1,9 @@
 {
   "name": "tempchannels-21.08.21",
   "version": "1.0.0",
+  "engines": {
+    "node": "16.x"
+  }
   "description": "",
   "main": "main.js",
   "scripts": {
