@@ -1,0 +1,17 @@
+{
+  "author": "Atineon",
+  "description": "",
+  "dependencies": {
+    "discord.js": "^13.1.0"
+  },
+  "engines": {
+    "node": "16.x"
+  },
+  "license": "ISC",
+  "main": "main.js",
+  "name": "tempchannels-21.08.21",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.0"
+}
