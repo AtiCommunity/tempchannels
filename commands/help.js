@@ -29,8 +29,6 @@ module.exports = {
                 {name: "tc/help", value: "If you want to see again this menu.", inline: true},
                 {name: "tc/init", value: "To initialize the bot into your server.", inline: true}
             )
-        message.channel.send({embeds: [intro]});
-        message.channel.send({embeds: [help]});
-        message.channel.send({embeds: [usercmd]});
+        message.channel.send({embeds: [intro, help, usercmd]});
     }
 }
