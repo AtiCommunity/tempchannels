@@ -22,4 +22,4 @@ client.on("ready", () => require("./events/ready")(client));
 client.on("messageCreate", message => require("./events/message")(client, message));
 client.on("voiceStateUpdate", (oldState, newState) => require("./events/voiceStateUpdate")(client, oldState, newState));
 
-client.login(precess.env.TOKEN);
+client.login(process.env.TOKEN);
