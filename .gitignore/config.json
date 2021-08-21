@@ -1,8 +1,0 @@
-{
-    "AVC_CATEGORY": "TempChannels",
-    "AVC_NC": "➕ New Channel",
-    "COMMANDS": ["help", "init"],
-    "CREATOR": ["Atineon#2652", "Zenyth#0001"],
-    "PREFIX": "tc/",
-    "VERSION": "21.08.21"
-}
