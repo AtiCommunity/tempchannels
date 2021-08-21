@@ -1,5 +1,5 @@
 {
-  "name": "tempchannels-21.03.06",
+  "name": "tempchannels-21.08.21",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
@@ -9,6 +9,6 @@
   "author": "Atineon",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^12.5.1"
+    "discord.js": "^13.1.0"
   }
 }

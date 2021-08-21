@@ -1,7 +1,13 @@
-const { Client, Collection } = require("discord.js");
+const { Client, Collection, Intents } = require("discord.js");
 const fs = require("fs");
 
-const client = new Client();
+const client = new Client({
+  intents: [
+    Intents.FLAGS.GUILDS,
+    Intents.FLAGS.GUILD_VOICE_STATES,
+    Intents.FLAGS.GUILD_MESSAGES
+  ]
+});
 
 
 client.commands = new Collection();
@@ -13,7 +19,7 @@ for(const file of commandFiles){
 
 
 client.on("ready", () => require("./events/ready")(client));
-client.on("message", message => require("./events/message")(client, message));
+client.on("messageCreate", message => require("./events/message")(client, message));
 client.on("voiceStateUpdate", (oldState, newState) => require("./events/voiceStateUpdate")(client, oldState, newState));
 
-client.login(process.env.TOKEN);
+client.login("NzQ4NjIxNTk0MDc0NTQ2MzY3.X0gGMA.yq03aw24i5XGCF3d3BM3v98XgVg");

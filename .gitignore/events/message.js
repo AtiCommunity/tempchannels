@@ -1,4 +1,4 @@
-const { PREFIX } = require("../config.json");
+const { COMMANDS, PREFIX } = require("../config.json");
 
 module.exports = (client, message) => {
     const args = message.content.slice(PREFIX.length).split(/ +/);
@@ -7,18 +7,34 @@ module.exports = (client, message) => {
     if(!message.content.startsWith(PREFIX) || message.author.bot) return;
 
     console.log(`INFO: ${message.author.tag} used the command ${command}.`);
-
-    if(command == "help" || command == "init"){
-        try{
-            client.commands.get(command).execute(message, args);
-        }
     
-        catch(error){
-            message.reply("The command was not executed successfully.");
-            console.error(error);
+    identification(command);
+
+    function identification(command) {
+        var identification;
+        for(var i=0; i<COMMANDS.length; i++){
+            if(command == COMMANDS[i]){
+                identification = true;
+                break;
+            }
+            else{
+                identification = false;
+            }
         }
-    }
-    else{
-        message.reply("unknown command.");
+        if(identification == true){
+            try{
+                client.commands.get(command).execute(message, args);
+            }
+        
+            catch(error){
+                message.reply("The command was not executed successfully.");
+                console.error(error);
+            }
+        }
+        else{
+            message.reply("Unknow command.")
+        }
     }
 };
+
+
