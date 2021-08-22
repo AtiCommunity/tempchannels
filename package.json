@@ -9,9 +9,9 @@
   },
   "license": "ISC",
   "main": "main.js",
-  "name": "tempchannels-21.08.21",
+  "name": "tempchannels",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "1.0.0"
+  "version": "21.08.22"
 }
