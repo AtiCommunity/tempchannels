@@ -6,8 +6,9 @@ module.exports = {
     execute(message, args) {
         const intro = new MessageEmbed()
             .setTitle("TempsChannels")
-            .setThumbnail("https://i.imgur.com/2KkYW4c.png")
-            .setDescription("Create your own temporary channels.")
+            .setColor("#863cef")
+            .setThumbnail("https://i.imgur.com/Mx2FDp2.png")
+            .setDescription("Create your own temporary channels.\n *Free For Ever !* :wink:")
             .addFields(
                 {name: "Version", value: `${VERSION}`, inline: true},
                 {name: "Discord.js", value: `${DISCORDJS_VERSION}`, inline: true},
@@ -16,16 +17,19 @@ module.exports = {
                 )
         const usercmd = new MessageEmbed()
             .setTitle("TempChannels | User commands")
-            .setThumbnail("https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Logo_TVE-1.svg/1950px-Logo_TVE-1.svg.png")
+            .setColor("#863cef")
+            .setThumbnail("https://i.imgur.com/fopKy0r.png")
             .addFields(
                 {name: "tc/help", value: "If you want to see again this menu.", inline: true},
-                {name: "tc/init", value: "To initialize the bot into your server.", inline: true}
+                {name: "tc/init", value: "To initialize the bot into your server.", inline: true},
+                {name: "tc/update", value: "To see the update notes.", inline: true}
             )
         const help = new MessageEmbed()
             .setTitle("TempChannels | Help menu")
-            .setThumbnail("https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Logo_TVE-2.svg/643px-Logo_TVE-2.svg.png")
+            .setColor("#863cef")
+            .setThumbnail("https://i.imgur.com/UOLqCUh.png")
             .addFields(
-                {name: "Discord invite", value: `You already not have invited this bot into your server ? :face_with_monocle: \n Click [here](https://discord.com/api/oauth2/authorize?client_id=731980097946517675&permissions=17001552&scope=bot)`, inline: true},
+                {name: "Discord invite", value: `You already not have invited this bot into your server ? :face_with_monocle: \n Click [here](https://discord.com/api/oauth2/authorize?client_id=731980097946517675&permissions=17001552&scope=bot) to invite the bot. :smile:`, inline: true},
                 {name: "How to use", value: `To use it correcly, you just need to enter the command \"tc/init"\ and join the "${AVC_NC}" channel and it's done. :wink:`, inline: true},
                 {name: "Support", value: "If you have something to ask or feedback, go on the support server of the bot [here](https://discord.gg/F3GDHhM).", inline: false},
             )
