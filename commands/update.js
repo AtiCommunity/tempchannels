@@ -10,7 +10,7 @@ module.exports = {
             .addFields(
                 {name: "**Latest update [21.08.22]**", value: `- Help command have been updated with more informations about the bot.
                                                                - tc/update added to see update notes.`},
-                {name: "**Update [21.08.21]**", value: `- Improve the time at 1000ms to create a temporary channel to have more chance to be moved in the channel if you are lagging.
+                {name: "**Update [21.08.21]**", value: `- Reduce the time at 1000ms to create a temporary channel to have more chance to be moved in the channel if you are lagging.
                                                         - The bot is now using the last version of discord.js and node.js.`},
             )
         message.channel.send({embeds: [update_notes]});
