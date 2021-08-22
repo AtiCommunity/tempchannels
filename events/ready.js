@@ -9,7 +9,6 @@ module.exports = (client) => {
 
 
     setInterval(() => {
-        console.log(x + " " + status[x]);
         if(x <= 1){
             client.user.setActivity(status[x], {type: "WATCHING"});
         }
