@@ -1,21 +1,29 @@
-module.exports = (client) => {
-    const status = [
-        `${client.guilds.cache.size} servers | tc/help`,
-        `${client.channels.cache.size} channels | tc/help`,
-        // `${client.users.cache.size} users | tc/help`,
-        `tc/update available`
-    ];
+module.exports = (client) => {    
     var x = 0;
 
-
     setInterval(() => {
+        var memberCount = 0;
+        
+        client.guilds.cache.forEach((guild) => {
+            if (guild.memberCount != NaN) {
+                memberCount += guild.memberCount;
+            }
+        });
+
+        const status = [
+            `${client.guilds.cache.size} servers | tc/help`,
+            `${client.channels.cache.filter((channel) => channel.type !== "GUILD_CATEGORY").size} channels | tc/help`,
+            `${memberCount} users | tc/help`,
+            `tc/update available`
+        ];
+
         if(x <= 1){
             client.user.setActivity(status[x], {type: "WATCHING"});
         }
         else{
             client.user.setActivity(status[x], {type: "PLAYING"});
         }
-        if(x == 2){
+        if(x == 3){
             x = 0;
         }
         else{
