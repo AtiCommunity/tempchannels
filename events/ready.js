@@ -17,7 +17,7 @@ module.exports = (client) => {
             `tc/update available`
         ];
 
-        if(x <= 1){
+        if(x <= 2){
             client.user.setActivity(status[x], {type: "WATCHING"});
         }
         else{
