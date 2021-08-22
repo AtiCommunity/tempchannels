@@ -23,8 +23,6 @@ module.exports = {
         const usercmd = new MessageEmbed()
             .setTitle("TempChannels | User commands")
             .setThumbnail("https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Logo_TVE-2.svg/643px-Logo_TVE-2.svg.png")
-            .addField("tc/help", "If you want to see again this menu.", true)
-            .addField("tc/init", "To initialize the bot into your server.", true)
             .addFields(
                 {name: "tc/help", value: "If you want to see again this menu.", inline: true},
                 {name: "tc/init", value: "To initialize the bot into your server.", inline: true}

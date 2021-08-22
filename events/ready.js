@@ -2,13 +2,13 @@ module.exports = (client) => {
     const status = [
         `${client.guilds.cache.size} servers | tc/help`,
         `${client.channels.cache.size} channels | tc/help`,
-        //`${client.users.cache.size} users | tc/help`
+        // `${client.users.cache.size} users | tc/help`
     ];
     var x = 0;
 
 
     setInterval(() => {
-        if(x == 2){ //default = 3
+        if(x == 2){ // default = 3
             x = 0;
         }
         client.user.setActivity(status[x], {type: "WATCHING"});
