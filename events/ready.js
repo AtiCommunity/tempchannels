@@ -14,18 +14,19 @@ module.exports = (client) => {
 
         const status = [
             `${client.guilds.cache.size} servers | tc/help`,
+            `${client.channels.cache.filter((channel) => channel.type == "GUILD_CATEGORY").size} categories | tc/help`,
             `${client.channels.cache.filter((channel) => channel.type !== "GUILD_CATEGORY").size} channels | tc/help`,
             `${memberCount} users | tc/help`,
             `tc/update available`
         ];
 
-        if(x <= 2){
+        if(x <= 3){
             client.user.setActivity(status[x], {type: "WATCHING"});
         }
         else{
             client.user.setActivity(status[x], {type: "PLAYING"});
         }
-        if(x == 3){
+        if(x == 4){
             x = 0;
         }
         else{
