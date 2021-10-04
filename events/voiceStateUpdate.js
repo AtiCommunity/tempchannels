@@ -9,7 +9,6 @@ module.exports = (client, oldState, newState) => {
  
     
     if(new_vc_name == AVC_NC){
-        console.log(newState.guild.channels.cache.find(channel => channel.name === AVC_CATEGORY && channel.type == "GUILD_CATEGORY"));
         newState.guild.channels.create(joining_user, {
             type: "GUILD_VOICE",
             parent: newState.guild.channels.cache.find(channel => channel.name === AVC_CATEGORY && channel.type == "GUILD_CATEGORY")
