@@ -26,6 +26,7 @@ module.exports = (client, oldState, newState) => {
             var channel_size = oldState.channel.members.size;
             if(channel_size == null){
                 channel_size = 0;
+                console.log("ALERT : channel_size null!");
             }
             if(channel_size > 0 && oldState.guild.channels.cache.find(channel => channel.name === oldState.member.user.username)){
                 var user_finder = oldState.channel.members.first().user.username;
