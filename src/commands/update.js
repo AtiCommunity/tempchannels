@@ -12,7 +12,7 @@ module.exports = {
                 {name: "\u200B", value: "\u200B"},
                 {name: "**Update [21.08.23]**", value: `- Help command has been updated again with one more information about source code.
                                                         - Update command has been updated with a space to see the latest update even better.
-                                                        - A new category calculator in the bot activity. :wink:`},
+                                                        - A new category calculator in the bot activity.`},
                 {name: "**Update [21.08.22]**", value: `- Help command has been updated with more informations about the bot.
                                                         - tc/update added to see update notes.`},
                 {name: "**Update [21.08.21]**", value: `- Reduced the time at 1000ms to create a temporary channel to have more chance to be moved in the channel if you are lagging.
