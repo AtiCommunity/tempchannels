@@ -24,8 +24,8 @@ module.exports = (client, oldState, newState) => {
 
     if(!new_vc_name && old_vc_name)
     {
+        var channel_size = oldState.channel.members.size;
         setTimeout(() => {
-            var channel_size = oldState.channel.members.size;
             if(channel_size > 0 && oldState.guild.channels.cache.find(channel => channel.name === oldState.member.user.username))
             {
                 var user_finder = oldState.channel.members.first().user.username;
@@ -44,8 +44,8 @@ module.exports = (client, oldState, newState) => {
 
     if(new_vc_name && old_vc_name == oldState.member.user.username)
     {
+        var channel_size = oldState.channel.members.size;
         setTimeout(() => {
-            var channel_size = oldState.channel.members.size;
             if(channel_size > 0 && new_vc_name != old_vc_name)
             {
                 var user_finder = oldState.channel.members.first().user.username;
