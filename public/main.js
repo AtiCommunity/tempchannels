@@ -19,7 +19,7 @@ for(const file of commandFiles){
 
 
 client.on("ready", () => require("../src/events/ready")(client));
-client.on("messageCreate", message => require("../src/events/message")(client, message));
-client.on("voiceStateUpdate", (oldState, newState) => require("../src/events/voiceStateUpdate")(client, oldState, newState));
+// client.on("messageCreate", message => require("../src/events/message")(client, message));
+// client.on("voiceStateUpdate", (oldState, newState) => require("../src/events/voiceStateUpdate")(client, oldState, newState));
 
 client.login(process.env.TOKEN);
