@@ -1,7 +1,7 @@
 {
     "AVC_CATEGORY": "TempChannels",
     "AVC_NC": "➕ New Channel",
-    "COMMANDS": ["help", "init", "update"],
+    "COMMANDS": ["help", "init", "update", "server"],
     "CREATOR": ["Atineon#2652"],
     "DISCORDJS_VERSION": "13.1.0",
     "NODEJS_VERSION": "16.14.0",
