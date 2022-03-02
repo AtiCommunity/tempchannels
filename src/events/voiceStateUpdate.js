@@ -1,4 +1,4 @@
-const { AVC_CATEGORY, AVC_NC } = require("../config.json");
+const {AVC_CATEGORY, AVC_NC} = require("../config.json");
 
 module.exports = (client, oldState, newState) => {
     var server = newState.guild.name;
@@ -8,7 +8,8 @@ module.exports = (client, oldState, newState) => {
     var old_vc_name = oldState.channel && oldState.channel.name;
  
     
-    if(new_vc_name == AVC_NC){
+    if(new_vc_name == AVC_NC)
+    {
         newState.guild.channels.create(joining_user, {
             type: "GUILD_VOICE",
             parent: newState.guild.channels.cache.find(channel => channel.name === AVC_CATEGORY && channel.type == "GUILD_CATEGORY")
@@ -16,15 +17,17 @@ module.exports = (client, oldState, newState) => {
         setTimeout(() => {
             var created_channel = newState.guild.channels.cache.find(channel => channel.name === joining_user && channel.type == "GUILD_VOICE");
             joined_user.voice.setChannel(created_channel);
-        }, 1000);
+        }, 2000);
         
         console.log(`INFO: ${joining_user} created a channel on ${server}.`);
     }
 
-    if(!new_vc_name && old_vc_name){
+    if(!new_vc_name && old_vc_name)
+    {
         setTimeout(() => {
             var channel_size = oldState.channel.members.size;
-            if(channel_size > 0 && oldState.guild.channels.cache.find(channel => channel.name === oldState.member.user.username)){
+            if(channel_size > 0 && oldState.guild.channels.cache.find(channel => channel.name === oldState.member.user.username))
+            {
                 var user_finder = oldState.channel.members.first().user.username;
                 var channel_finder = oldState.guild.channels.cache.find(channel => channel.name === oldState.member.user.username);
                 channel_finder.setName(`${user_finder}`);
@@ -39,10 +42,12 @@ module.exports = (client, oldState, newState) => {
         }, 1000);
     }
 
-    if(new_vc_name && old_vc_name == oldState.member.user.username){
+    if(new_vc_name && old_vc_name == oldState.member.user.username)
+    {
         setTimeout(() => {
             var channel_size = oldState.channel.members.size;
-            if(channel_size > 0 && new_vc_name != old_vc_name){
+            if(channel_size > 0 && new_vc_name != old_vc_name)
+            {
                 var user_finder = oldState.channel.members.first().user.username;
                 var channel_finder = oldState.guild.channels.cache.find(channel => channel.name === oldState.member.user.username);
                 channel_finder.setName(`${user_finder}`);

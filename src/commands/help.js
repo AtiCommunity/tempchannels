@@ -1,9 +1,10 @@
-const { MessageEmbed } = require("discord.js");
-const { AVC_NC, CREATOR, DISCORDJS_VERSION, NODEJS_VERSION, VERSION } = require("../config.json");
+const {MessageEmbed} = require("discord.js");
+const {AVC_NC, CREATOR, DISCORDJS_VERSION, NODEJS_VERSION, VERSION} = require("../config.json");
 
 module.exports = {
     name: "help",
-    execute(message, args) {
+    execute(message, args)
+    {
         const intro = new MessageEmbed()
             .setTitle("TempsChannels")
             .setColor("#863cef")
@@ -14,7 +15,7 @@ module.exports = {
                 {name: "Discord.js", value: `${DISCORDJS_VERSION}`, inline: true},
                 {name: "Node.js", value: `${NODEJS_VERSION}`, inline: true},
                 {name: "Version", value: `${VERSION}`, inline: true},
-                {name: "Created by", value: `[${CREATOR[0]}](https://top.gg/user/224466162526715904) and [${CREATOR[1]}](https://top.gg/user/219443996118876161)`, inline: true}
+                {name: "Created by", value: `[${CREATOR[0]}](https://top.gg/user/224466162526715904)`, inline: true}
             )
         const usercmd = new MessageEmbed()
             .setTitle("TempChannels | User commands")

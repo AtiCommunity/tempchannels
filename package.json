@@ -4,12 +4,12 @@
     "discord.js": "^13.1.0"
   },
   "license": "ISC",
-  "main": "main.js",
-  "name": "tempchannels",
+  "main": "index.js",
+  "name": "empchannels",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "22.2.27",
+  "version": "22.03.02",
   "devDependencies": {},
   "description": ""
 }
