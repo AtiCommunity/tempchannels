@@ -1,7 +1,7 @@
 const { VERSION } = require("../config.json");
 
 module.exports = (client) => {    
-    client.user.setAcivity("FIX IN PROGRESS", {type: "WATCHING"});
+    client.user.setActivity("FIX IN PROGRESS", {type: "WATCHING"});
     // var x = 0;
 
     // setInterval(() => {
