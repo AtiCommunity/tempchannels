@@ -23,7 +23,7 @@ module.exports = (client) => {
 
         if(counter == 5) counter = 0;
         else counter++;
-    }, 5000);
+    }, 10000);
     
     console.log(`INFO: Logged in as ${client.user.tag} !`);
     console.log(`INFO: Version : ${VERSION}`);
