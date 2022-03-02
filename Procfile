@@ -1,1 +1,1 @@
-worker: node ./public/main.js
+worker: node ./public/index.js
