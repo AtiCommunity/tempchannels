@@ -28,5 +28,4 @@ module.exports = (client) => {
     console.log(`INFO: Logged in as ${client.user.tag} !`);
     console.log(`INFO: Version : ${VERSION}`);
     console.log(`INFO: Online on ${client.guilds.cache.size} servers.`);
-    console.log(client.guilds.cache.map(guild => `name : ${guild.name} | members : ${guild.memberCount}`));
 };
