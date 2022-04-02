@@ -24,16 +24,14 @@ module.exports = (client, oldState, newState) => {
 
     if(!new_vc_name && old_vc_name)
     {
-        console.log(oldState.channel.members.size);
         if(typeof(oldState.channel.members.size) == "undefined")
         {
             var channel_size = 0;
-            console.log("TEST 1 1 !");
+            
         }
         else
         {
             var channel_size = oldState.channel.members.size;
-            console.log("TEST 1 2 !");
         }
         setTimeout(() => {
             if(channel_size > 0 && oldState.guild.channels.cache.find(channel => channel.name === oldState.member.user.username))
@@ -54,16 +52,14 @@ module.exports = (client, oldState, newState) => {
 
     if(new_vc_name && old_vc_name == oldState.member.user.username)
     {
-        console.log(oldState.channel.members.size);
         if(typeof(oldState.channel.members.size) == "undefined")
         {
             var channel_size = 0;
-            console.log("TEST 2 1 !");
+            console.log("ALERT : variable was not define.");
         }
         else
         {
             var channel_size = oldState.channel.members.size;
-            console.log("TEST 2 2 !");
         }
         setTimeout(() => {
             if(channel_size > 0 && new_vc_name != old_vc_name)
