@@ -55,7 +55,7 @@ module.exports = (client, oldState, newState) => {
         if(typeof(oldState.channel.members.size == "undefined"))
         {
             var channel_size = 0;
-            console.log("TEST REUSSI !");
+            console.log("TEST 2 REUSSI !");
         }
         else
         {
