@@ -25,7 +25,7 @@ module.exports = (client, oldState, newState) => {
     if(!new_vc_name && old_vc_name)
     {
         console.log(oldState.channel.members.size);
-        if(typeof(oldState.channel.members.size == "undefined"))
+        if(typeof(oldState.channel.members.size) == "undefined")
         {
             var channel_size = 0;
             console.log("TEST 1 REUSSI !");
@@ -54,7 +54,7 @@ module.exports = (client, oldState, newState) => {
     if(new_vc_name && old_vc_name == oldState.member.user.username)
     {
         console.log(oldState.channel.members.size);
-        if(typeof(oldState.channel.members.size) == "undefined"))
+        if(typeof(oldState.channel.members.size) == "undefined")
         {
             var channel_size = 0;
             console.log("TEST 2 REUSSI !");
