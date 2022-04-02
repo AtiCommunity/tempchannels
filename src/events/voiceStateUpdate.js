@@ -51,7 +51,14 @@ module.exports = (client, oldState, newState) => {
 
     if(new_vc_name && old_vc_name == oldState.member.user.username)
     {
-        var channel_size = oldState.channel.members.size;
+        if(typeof(oldState.channel.members.size == "undefined"))
+        {
+            var channel_size = 0;
+        }
+        else
+        {
+            var channel_size = oldState.channel.members.size;
+        }
         setTimeout(() => {
             if(channel_size > 0 && new_vc_name != old_vc_name)
             {
