@@ -1,0 +1,11 @@
+{
+    "BOT_ADMINS": ["Atineon#2652"],
+    "AVC_CATEGORY": "TempChannels",
+    "AVC_NC": "➕ New Channel",
+    "COMMANDS": ["help", "init", "update", "server"],
+    "CREATOR": "Atineon#2652",
+    "DISCORDJS_VERSION": "13.7.0",
+    "NODEJS_VERSION": "16.15.0",
+    "PREFIX": "tc/",
+    "VERSION": "22.05.28"
+}

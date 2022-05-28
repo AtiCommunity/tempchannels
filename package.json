@@ -1,15 +1,5 @@
 {
-  "author": "Atineon",
   "dependencies": {
-    "discord.js": "^13.1.0"
-  },
-  "license": "ISC",
-  "main": "index.js",
-  "name": "empchannels",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "version": "22.03.02",
-  "devDependencies": {},
-  "description": ""
+    "discord.js": "^13.7.0"
+  }
 }
