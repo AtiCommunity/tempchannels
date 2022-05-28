@@ -25,6 +25,15 @@ module.exports = (client) => {
         else counter++;
     }, 10000);
     
+    const category = client.channels.cache.find(category => category.name === AVC_CATEGORY);
+    category.children.map(channel => {
+        if(channel.name != AVC_NC && channel.members.size == 0)
+        {
+            channel.delete();
+            console.log(`INFO: Channel named ${channel.name} was deleted !`);
+        }
+    });
+    
     console.log(`INFO: Logged in as ${client.user.tag} !`);
     console.log(`INFO: Version : ${VERSION}`);
     console.log(`INFO: Online on ${client.guilds.cache.size} server(s).`);
