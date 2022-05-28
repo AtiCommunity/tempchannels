@@ -1,4 +1,4 @@
-const {VERSION} = require("../config.json");
+const {AVC_CATEGORY, AVC_NC, VERSION} = require("../config.json");
 
 module.exports = (client) => {    
     var counter = 0;
